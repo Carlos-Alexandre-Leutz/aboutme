@@ -1,1 +1,959 @@
-<!doctype html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Vue App</title><script defer="defer" src="/about-me/js/chunk-vendors.c997fd66.js"></script><script defer="defer" src="/about-me/js/app.320db245.js"></script><link href="/about-me/css/chunk-vendors.39b9ce7a.css" rel="stylesheet"><link href="/about-me/css/app.dfd8a2e3.css" rel="stylesheet"><!--[if IE]><link rel="icon" type="image/svg+xml" href="/about-me/img/icons/favicon.svg"><![endif]--><link rel="icon" type="image/png" sizes="32x32" href="/about-me/img/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/about-me/img/icons/favicon-16x16.png"><link rel="manifest" href="/about-me/manifest.json"><meta name="theme-color" content="#4DBA87"><meta name="apple-mobile-web-app-capable" content="no"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="my-vue-js-resume"><link rel="apple-touch-icon" href="/about-me/img/icons/apple-touch-icon-152x152.png"><link rel="mask-icon" href="/about-me/img/icons/safari-pinned-tab.svg" color="#4DBA87"><meta name="msapplication-TileImage" content="/about-me/img/icons/msapplication-icon-144x144.png"><meta name="msapplication-TileColor" content="#000000"></head><body><div id="app"></div></body></html>
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+      Carlos Leutz | Full-Stack Software Engineer &amp; AI Specialist
+    </title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffdcc6",
+              "surface-container": "#171f33",
+              surface: "#0b1326",
+              "on-tertiary": "#502400",
+              "surface-container-highest": "#2d3449",
+              "secondary-fixed": "#a2eeff",
+              primary: "#adc6ff",
+              "surface-card": "#1E293B",
+              "surface-variant": "#2d3449",
+              background: "#0b1326",
+              "surface-container-lowest": "#060e20",
+              "on-error-container": "#ffdad6",
+              "surface-container-low": "#131b2e",
+              "secondary-container": "#00cbe6",
+              "on-secondary-container": "#00515d",
+              "on-tertiary-fixed": "#311400",
+              outline: "#8c909f",
+              "on-tertiary-fixed-variant": "#723600",
+              "on-tertiary-container": "#461f00",
+              "on-surface": "#dae2fd",
+              "surface-tint": "#adc6ff",
+              "inverse-on-surface": "#283044",
+              "tertiary-fixed-dim": "#ffb786",
+              "secondary-fixed-dim": "#2fd9f4",
+              "surface-bright": "#31394d",
+              "primary-fixed": "#d8e2ff",
+              "surface-dim": "#0b1326",
+              "error-container": "#93000a",
+              "inverse-surface": "#dae2fd",
+              "surface-container-high": "#222a3d",
+              "surface-glass": "rgba(30, 41, 59, 0.7)",
+              error: "#ffb4ab",
+              "primary-fixed-dim": "#adc6ff",
+              "outline-variant": "#424754",
+              "on-surface-variant": "#c2c6d6",
+              "on-primary-fixed-variant": "#004395",
+              "on-secondary-fixed": "#001f25",
+              "on-error": "#690005",
+              "on-background": "#dae2fd",
+              tertiary: "#ffb786",
+              "inverse-primary": "#005ac2",
+              "on-primary": "#002e6a",
+              "status-error": "#F2545B",
+              "on-primary-fixed": "#001a42",
+              "accent-indigo": "#4F47E6",
+              "primary-container": "#4d8eff",
+              "on-primary-container": "#00285d",
+              secondary: "#5de6ff",
+              "tertiary-container": "#df7412",
+              "on-secondary": "#00363e",
+              "on-secondary-fixed-variant": "#004e5a",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              "margin-mobile": "20px",
+              "container-max": "1200px",
+              unit: "4px",
+              "margin-desktop": "64px",
+              gutter: "16px",
+            },
+            fontFamily: {
+              "headline-lg": ["Inter"],
+              "code-sm": ["JetBrains Mono"],
+              "body-md": ["Inter"],
+              "label-md": ["JetBrains Mono"],
+              "body-lg": ["Inter"],
+              "headline-xl": ["Inter"],
+              "headline-lg-mobile": ["Inter"],
+              "headline-md": ["Inter"],
+            },
+            fontSize: {
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "code-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "label-md": ["14px", { lineHeight: "20px", fontWeight: "500" }],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "headline-xl": [
+                "40px",
+                {
+                  lineHeight: "48px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-lg-mobile": [
+                "28px",
+                { lineHeight: "36px", fontWeight: "600" },
+              ],
+              "headline-md": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "600" },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #0b1326;
+        color: #dae2fd;
+        scroll-behavior: smooth;
+      }
+      .glass-panel {
+        background: rgba(30, 41, 59, 0.4);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .node-glow {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(
+          circle,
+          rgba(173, 198, 255, 0.08) 0%,
+          rgba(173, 198, 255, 0) 70%
+        );
+        pointer-events: none;
+        z-index: 0;
+      }
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0b1326;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #2d3449;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #424754;
+      }
+    </style>
+  </head>
+  <body class="font-body-md overflow-x-hidden">
+    <!-- Top Navigation Shell -->
+    <nav
+      class="fixed top-0 w-full z-50 h-16 bg-surface-glass backdrop-blur-xl border-b border-white/10 flex justify-between items-center px-margin-mobile md:px-margin-desktop shadow-sm shadow-primary/5"
+    >
+      <div class="flex items-center gap-3">
+        <span
+          class="material-symbols-outlined text-primary font-bold text-headline-md"
+          style="font-variation-settings: &quot;FILL&quot; 1"
+          >terminal</span
+        >
+        <span
+          class="font-headline-md text-headline-md font-bold text-primary tracking-tighter"
+          >ENGINEER.AI</span
+        >
+      </div>
+      <div
+        class="hidden md:flex items-center gap-8 font-label-md text-on-surface-variant"
+      >
+        <a
+          class="hover:text-primary transition-colors duration-300 cursor-pointer active:scale-95"
+          href="#profile"
+          >Profile</a
+        >
+        <a
+          class="hover:text-primary transition-colors duration-300 cursor-pointer active:scale-95"
+          href="#experience"
+          >Experience</a
+        >
+        <a
+          class="hover:text-primary transition-colors duration-300 cursor-pointer active:scale-95"
+          href="#projects"
+          >Projects</a
+        >
+        <a
+          class="hover:text-primary transition-colors duration-300 cursor-pointer active:scale-95"
+          href="#skills"
+          >Skills</a
+        >
+        <button
+          class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-bold hover:brightness-110 transition-all"
+        >
+          Contact
+        </button>
+      </div>
+      <div class="md:hidden">
+        <span class="material-symbols-outlined text-primary">menu</span>
+      </div>
+    </nav>
+    <main
+      class="pt-16 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop"
+    >
+      <!-- Hero Section -->
+      <section
+        class="min-h-[819px] flex flex-col md:flex-row items-center gap-12 py-12 relative"
+      >
+        <div class="node-glow top-0 -left-20"></div>
+        <div class="w-full md:w-1/2 z-10">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/10 border border-secondary/20 text-secondary font-code-sm mb-6"
+          >
+            <span
+              class="w-2 h-2 rounded-full bg-secondary animate-pulse"
+            ></span>
+            AVAILABLE FOR COLLABORATION
+          </div>
+          <h1
+            class="font-headline-xl text-headline-xl text-on-surface mb-6 leading-tight"
+          >
+            Full-Stack Software Engineer | <br />
+            <span class="text-primary">AI &amp; Machine Learning</span>
+            Specialist
+          </h1>
+          <p
+            class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl"
+          >
+            Bridging the gap between complex business requirements and scalable,
+            AI-driven solutions.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <button
+              class="bg-primary-container text-on-primary-container px-8 py-4 rounded-xl font-headline-md text-headline-md hover:scale-[1.02] transition-transform flex items-center gap-2"
+            >
+              View Projects
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+            <button
+              class="border border-outline-variant text-on-surface px-8 py-4 rounded-xl font-headline-md text-headline-md hover:bg-white/5 transition-colors"
+            >
+              Download CV
+            </button>
+          </div>
+        </div>
+        <div
+          class="w-full md:w-1/2 relative h-[400px] md:h-[600px] flex items-center justify-center"
+        >
+          <div class="absolute inset-0 z-0"></div>
+          <!-- Abstract "Data Node" Visual -->
+          <div
+            class="glass-panel w-64 h-64 rounded-full flex items-center justify-center relative z-10 animate-[bounce_5s_infinite_ease-in-out]"
+          >
+            <span
+              class="material-symbols-outlined text-[80px] text-primary"
+              style="font-variation-settings: &quot;FILL&quot; 1"
+              >neurology</span
+            >
+            <div
+              class="absolute -top-4 -right-4 bg-surface-container-highest p-3 rounded-xl border border-white/10 shadow-xl"
+            >
+              <span class="material-symbols-outlined text-secondary"
+                >database</span
+              >
+            </div>
+            <div
+              class="absolute -bottom-8 -left-4 bg-surface-container-highest p-3 rounded-xl border border-white/10 shadow-xl"
+            >
+              <span class="material-symbols-outlined text-tertiary"
+                >cloud_done</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Professional Profile -->
+      <section class="py-24 border-t border-white/5" id="profile">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+          <div>
+            <h2
+              class="font-headline-lg text-headline-lg mb-8 flex items-center gap-4"
+            >
+              <span class="text-primary">01.</span> Professional Profile
+            </h2>
+            <div class="space-y-6 font-body-lg text-on-surface-variant">
+              <p>
+                With a strong foundation in full-stack engineering and a focus
+                on artificial intelligence, I specialize in transforming complex
+                data into production-ready software architectures.
+              </p>
+              <p>
+                My approach integrates clean code practices with advanced
+                machine learning pipelines, ensuring that AI implementations are
+                scalable, maintainable, and aligned with core business
+                objectives.
+              </p>
+              <div class="pt-6 flex gap-8">
+                <div>
+                  <div class="text-secondary font-headline-md text-headline-md">
+                    70+
+                  </div>
+                  <div class="font-label-md text-label-md">Deployments</div>
+                </div>
+                <div>
+                  <div class="text-primary font-headline-md text-headline-md">
+                    3+
+                  </div>
+                  <div class="font-label-md text-label-md">
+                    AI Implementations
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="glass-panel p-8 rounded-xl grid grid-cols-2 gap-4">
+            <div class="col-span-2 mb-4">
+              <h3
+                class="font-label-md text-label-md text-secondary uppercase tracking-widest"
+              >
+                Core Competencies
+              </h3>
+            </div>
+            <div
+              class="p-4 bg-white/5 rounded-lg border border-white/5 hover:border-primary/30 transition-colors"
+            >
+              <span class="material-symbols-outlined text-primary mb-2"
+                >rocket_launch</span
+              >
+              <h4 class="font-headline-md text-[18px]">Full-Stack Development</h4>
+              <p class="text-on-surface-variant text-sm">
+                Building end-to-end applications.
+                <small>
+                  Focused on clean code and high performance.
+                </small>
+              </p>
+            </div>
+            <div
+              class="p-4 bg-white/5 rounded-lg border border-white/5 hover:border-primary/30 transition-colors"
+            >
+              <span class="material-symbols-outlined text-secondary mb-2"
+                >architecture</span
+              >
+              <h4 class="font-headline-md text-[18px]">System Architecture & DevOps</h4>
+              <p class="text-on-surface-variant text-sm">
+               Designing scalable infrastructures using Docker, Kubernetes, and CI/CD pipelines.
+                <small>
+                 Expertise in modernizing legacy systems.
+                </small>
+              </p>
+            </div>
+            <div
+              class="p-4 bg-white/5 rounded-lg border border-white/5 hover:border-primary/30 transition-colors"
+            >
+              <span class="material-symbols-outlined text-tertiary mb-2"
+                >psychology</span
+              >
+              <h4 class="font-headline-md text-[18px]">AI & Machine Learning Engineering</h4>
+              <p class="text-on-surface-variant text-sm">
+               Deploying production-ready ML models with a deep understanding of the underlying mathematical foundations
+              </p>
+            </div>
+            <div
+              class="p-4 bg-white/5 rounded-lg border border-white/5 hover:border-primary/30 transition-colors"
+            >
+              <span class="material-symbols-outlined text-primary mb-2"
+                >data_thresholding</span
+              >
+              <h4 class="font-headline-md text-[18px]">Performance Optimization</h4>
+              <p class="text-on-surface-variant text-sm">
+               Identifying bottlenecks and optimizing system latency.
+               <small>
+                Proven record of reducing load times by 70%+ through strategic code refactoring.
+               </small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Career History -->
+      <section class="py-24 border-t border-white/5" id="experience">
+        <h2
+          class="font-headline-lg text-headline-lg mb-16 flex items-center gap-4"
+        >
+          <span class="text-primary">02.</span> Career History
+        </h2>
+        <div class="relative pl-8 md:pl-0">
+          <!-- Vertical Line -->
+          <div
+            class="absolute left-[7px] md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-[2px] bg-surface-container-highest"
+          ></div>
+          <!-- Timeline Item 1: FTD Editora -->
+          <div
+            class="relative mb-20 md:flex md:justify-between items-center w-full"
+          >
+            <div
+              class="md:w-[45%] glass-panel p-8 rounded-xl order-1 md:order-1 hover:border-secondary/50 transition-all"
+            >
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline-md text-headline-md text-on-surface">
+                  Senior Software Engineer
+                </h3>
+                <span
+                  class="text-secondary font-code-sm px-2 py-1 bg-secondary/10 rounded"
+                  >FTD EDITORA</span
+                >
+              </div>
+              <h4 class="text-primary font-body-md mb-4">
+                Optimization &amp; Predictive Modeling
+              </h4>
+              <p class="text-on-surface-variant mb-6">
+                Revolutionized legacy systems through strategic optimization.
+                Implemented predictive financial models that resulted in over
+                $200k USD (~R$ 1M+) in annual budget savings.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs px-2 py-1 bg-surface-variant rounded border border-white/5"
+                  >Python</span
+                >
+                <span
+                  class="text-xs px-2 py-1 bg-surface-variant rounded border border-white/5"
+                  >Pandas</span
+                >
+                <span
+                  class="text-xs px-2 py-1 bg-surface-variant rounded border border-white/5"
+                  >Scikit-learn</span
+                >
+              </div>
+            </div>
+            <div
+              class="absolute left-[-25px] md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-secondary shadow-[0_0_15px_rgba(93,230,255,0.8)] z-10"
+            ></div>
+            <div class="hidden md:block md:w-[45%] order-2"></div>
+          </div>
+          <!-- Timeline Item 2: PRISMAFIVE -->
+          <div
+            class="relative mb-20 md:flex md:justify-between items-center w-full"
+          >
+            <div class="hidden md:block md:w-[45%] order-1"></div>
+            <div
+              class="absolute left-[-25px] md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-primary z-10"
+            ></div>
+            <div
+              class="md:w-[45%] glass-panel p-8 rounded-xl order-2 md:order-2 hover:border-primary/50 transition-all"
+            >
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline-md text-headline-md text-on-surface">
+                  Software Developer
+                </h3>
+                <span
+                  class="text-primary font-code-sm px-2 py-1 bg-primary/10 rounded"
+                  >PRISMAFIVE</span
+                >
+              </div>
+              <h4 class="text-secondary font-body-md mb-4">
+                Legacy Modernization
+              </h4>
+              <p class="text-on-surface-variant mb-6">
+                Lead technical transition from legacy Delphi systems to a
+                modern, robust stack utilizing C# .NET for backend and Vue.js
+                for high-performance user interfaces.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs px-2 py-1 bg-surface-variant rounded border border-white/5"
+                  >C# .NET</span
+                >
+                <span
+                  class="text-xs px-2 py-1 bg-surface-variant rounded border border-white/5"
+                  >Vue.js</span
+                >
+                <span
+                  class="text-xs px-2 py-1 bg-surface-variant rounded border border-white/5"
+                  >SQL Server</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Timeline Item 3: YELLOW LING -->
+          <div
+            class="relative mb-4 md:flex md:justify-between items-center w-full"
+          >
+            <div
+              class="md:w-[45%] glass-panel p-8 rounded-xl order-1 md:order-1 hover:border-tertiary/50 transition-all"
+            >
+              <div class="flex justify-between items-start mb-4">
+                <h3 class="font-headline-md text-headline-md text-on-surface">
+                  Lead Developer
+                </h3>
+                <span
+                  class="text-tertiary font-code-sm px-2 py-1 bg-tertiary/10 rounded"
+                  >YELLOW LING</span
+                >
+              </div>
+              <h4 class="text-primary font-body-md mb-4">
+                Platform Engineering
+              </h4>
+              <p class="text-on-surface-variant mb-6">
+                Spearheaded the development of a complex translation platform.
+                Managed product life cycles from initial MVP to full production
+                rollout, ensuring rapid scaling.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="text-xs px-2 py-1 bg-surface-variant rounded border border-white/5"
+                  >Node.js</span
+                >
+                <span
+                  class="text-xs px-2 py-1 bg-surface-variant rounded border border-white/5"
+                  >React</span
+                >
+                <span
+                  class="text-xs px-2 py-1 bg-surface-variant rounded border border-white/5"
+                  >AWS</span
+                >
+              </div>
+            </div>
+            <div
+              class="absolute left-[-25px] md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-tertiary z-10"
+            ></div>
+            <div class="hidden md:block md:w-[45%] order-2"></div>
+          </div>
+        </div>
+      </section>
+      <!-- Education Section -->
+      <section class="py-24 border-t border-white/5" id="education">
+        <h2
+          class="font-headline-lg text-headline-lg mb-12 flex items-center gap-4"
+        >
+          <span class="text-primary">03.</span> Education
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="p-8 bg-surface-container-low border border-white/5 rounded-xl flex flex-col items-center text-center"
+          >
+            <span class="material-symbols-outlined text-primary text-4xl mb-4"
+              >assignment_turned_in</span
+            >
+            <h3 class="font-headline-md text-headline-md mb-2">
+              Postgraduate Degree
+            </h3>
+            <p class="text-secondary font-label-md mb-4">
+              Universidade Descomplica
+            </p>
+            <p class="text-on-surface-variant text-sm">
+              Product Management: Strategic alignment and product lifecycle
+              mastery.
+            </p>
+          </div>
+          <div
+            class="p-8 bg-surface-container-low border border-white/5 rounded-xl flex flex-col items-center text-center"
+          >
+            <span class="material-symbols-outlined text-secondary text-4xl mb-4"
+              >developer_board</span
+            >
+            <h3 class="font-headline-md text-headline-md mb-2">
+              Associate Degree
+            </h3>
+            <p class="text-primary font-label-md mb-4">
+              Universidade Estácio de Sá
+            </p>
+            <p class="text-on-surface-variant text-sm">
+              Systems Analysis and Development: Core software engineering
+              principles.
+            </p>
+          </div>
+          <div
+            class="p-8 bg-surface-container-low border border-white/5 rounded-xl flex flex-col items-center text-center"
+          >
+            <span class="material-symbols-outlined text-tertiary text-4xl mb-4"
+              >verified</span
+            >
+            <h3 class="font-headline-md text-headline-md mb-2">
+              ML Specialization
+            </h3>
+            <p class="text-tertiary font-label-md mb-4">DeepLearning.AI</p>
+            <p class="text-on-surface-variant text-sm">
+              Professional Certification in advanced Machine Learning and Neural
+              Networks.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Projects Grid -->
+      <section class="py-24 border-t border-white/5" id="projects">
+        <h2
+          class="font-headline-lg text-headline-lg mb-16 flex items-center gap-4"
+        >
+          <span class="text-primary">04.</span> Featured Projects
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project Card 1 -->
+          <div
+            class="group relative bg-surface-container rounded-2xl overflow-hidden border border-white/5 hover:border-primary/40 transition-all duration-500 shadow-xl"
+          >
+            <div
+              class="h-48 w-full bg-cover bg-center"
+              style="
+                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDHP1JBT-_JtwPDJhmjUDJKT7Ck1GJBdmbEcoIrObBDJI1NAAECNotSh8T-bzoo9YyaSg73uCeMIBBCQ9GK7lIV6UKFA9JUrTiUG4Ka4BomNzLvzTondlTiIISMxeeSQtEUqmxxXdlu1MrfD2U2ILyBlXJVDbG5N3dz1M9Bya4j4UDo07O_BqGi9c7szmwL-Fx8-UDUQIu1zDDXnuK7QW5iXsNQyRfR4zs0A5oyvHiKUgIxgOFfYBULR2Bk2PwVSaGL1ERnYHxmJ2E&quot;);
+              "
+            ></div>
+            <div class="p-8">
+              <div class="flex gap-2 mb-4">
+                <span
+                  class="font-code-sm text-xs px-2 py-1 bg-primary/10 text-primary rounded"
+                  >AI</span
+                >
+                <span
+                  class="font-code-sm text-xs px-2 py-1 bg-secondary/10 text-secondary rounded"
+                  >Python</span
+                >
+              </div>
+              <h3
+                class="font-headline-md text-headline-md mb-4 group-hover:text-primary transition-colors"
+              >
+                NeuralNexus API
+              </h3>
+              <p class="text-on-surface-variant mb-6 text-sm">
+                A high-throughput LLM gateway supporting multi-provider fallback
+                and automated prompt caching.
+              </p>
+              <div class="flex justify-between items-center">
+                <a
+                  class="text-primary flex items-center gap-2 hover:underline"
+                  href="#"
+                  >Code
+                  <span class="material-symbols-outlined text-sm">link</span></a
+                >
+                <span
+                  class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Project Card 2 -->
+          <div
+            class="group relative bg-surface-container rounded-2xl overflow-hidden border border-white/5 hover:border-secondary/40 transition-all duration-500 shadow-xl"
+          >
+            <div
+              class="h-48 w-full bg-cover bg-center"
+              style="
+                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDUec1MGdB8C_TVrp88a3Oe83WtMl9G3V5qMYYlXyrBfOMO34IZyECHB0i9c16eGQOvFdkWgDmFwi8Jus21HmcXtmVzFgi6MbJ1HDWSq7i8xdUqPS2h0jNOVaCbJR3-pv4w5-cFGBeTGkMO7oqjlpzpBWOFwCqc9qn9tFVhli7-4vE8Sc4mFXMK58TxC-Z3bEip9rvTqcuG0GQ09zyI7FZ9wz4x76QH8lgf3FtmmkdCLE101C3FM7tPP3hfDEdw0p15BNrotfSqB5A&quot;);
+              "
+            ></div>
+            <div class="p-8">
+              <div class="flex gap-2 mb-4">
+                <span
+                  class="font-code-sm text-xs px-2 py-1 bg-secondary/10 text-secondary rounded"
+                  >Web</span
+                >
+                <span
+                  class="font-code-sm text-xs px-2 py-1 bg-tertiary/10 text-tertiary rounded"
+                  >Vue.js</span
+                >
+              </div>
+              <h3
+                class="font-headline-md text-headline-md mb-4 group-hover:text-secondary transition-colors"
+              >
+                QuantumViz
+              </h3>
+              <p class="text-on-surface-variant mb-6 text-sm">
+                WebGL-based visualization library for high-dimensional data
+                clustering and real-time rendering.
+              </p>
+              <div class="flex justify-between items-center">
+                <a
+                  class="text-secondary flex items-center gap-2 hover:underline"
+                  href="#"
+                  >Code
+                  <span class="material-symbols-outlined text-sm">link</span></a
+                >
+                <span
+                  class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Project Card 3 -->
+          <div
+            class="group relative bg-surface-container rounded-2xl overflow-hidden border border-white/5 hover:border-tertiary/40 transition-all duration-500 shadow-xl"
+          >
+            <div
+              class="h-48 w-full bg-cover bg-center"
+              style="
+                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuD1nvdFYhkw2WiWONSVCpMpnXF6RkCN1kplvr35JTh8yy8Sz92oU_wI9rqgponlqWhCTW4dhNGDI770oTzRQJxDqsriuwPKvRmZh3pCSixLDEbF6rfFPEkQaSVMbER3LxMBaUodm1WU614EjTBMupAY3xMCspzRF-cRHJw_pg34c9T_XTqF_rZl_tSL0CMFtfMkQur5zfNFGyCD8G9vGK7FFAhyxTSiCXhXAG8q11QAFR0BkeCDJkf3Y5V7sRiMaOeILEVJXS_AY5o&quot;);
+              "
+            ></div>
+            <div class="p-8">
+              <div class="flex gap-2 mb-4">
+                <span
+                  class="font-code-sm text-xs px-2 py-1 bg-tertiary/10 text-tertiary rounded"
+                  >Cloud</span
+                >
+                <span
+                  class="font-code-sm text-xs px-2 py-1 bg-primary/10 text-primary rounded"
+                  >C#</span
+                >
+              </div>
+              <h3
+                class="font-headline-md text-headline-md mb-4 group-hover:text-tertiary transition-colors"
+              >
+                SkyScale Orchestrator
+              </h3>
+              <p class="text-on-surface-variant mb-6 text-sm">
+                Automated deployment agent for zero-downtime rollouts in
+                heterogeneous cloud environments.
+              </p>
+              <div class="flex justify-between items-center">
+                <a
+                  class="text-tertiary flex items-center gap-2 hover:underline"
+                  href="#"
+                  >Code
+                  <span class="material-symbols-outlined text-sm">link</span></a
+                >
+                <span
+                  class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Technical Arsenal -->
+      <section class="py-24 border-t border-white/5" id="skills">
+        <h2
+          class="font-headline-lg text-headline-lg mb-16 flex items-center gap-4"
+        >
+          <span class="text-primary">05.</span> Technical Arsenal
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <!-- Core -->
+          <div class="glass-panel p-6 rounded-xl border-white/10">
+            <h3
+              class="font-label-md text-label-md text-primary flex items-center gap-2 mb-6 uppercase tracking-wider"
+            >
+              <span class="material-symbols-outlined text-primary"
+                >terminal</span
+              >
+              Core
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >Python</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >C# .NET</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >Node.js</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >TypeScript</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >SQL/NoSQL</span
+              >
+            </div>
+          </div>
+          <!-- AI -->
+          <div class="glass-panel p-6 rounded-xl border-white/10">
+            <h3
+              class="font-label-md text-label-md text-secondary flex items-center gap-2 mb-6 uppercase tracking-wider"
+            >
+              <span class="material-symbols-outlined text-secondary"
+                >psychology</span
+              >
+              AI
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >TensorFlow</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >Scikit-learn</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >NLP</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >LLM Tuning</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >Deep Learning</span
+              >
+            </div>
+          </div>
+          <!-- Infrastructure -->
+          <div class="glass-panel p-6 rounded-xl border-white/10">
+            <h3
+              class="font-label-md text-label-md text-tertiary flex items-center gap-2 mb-6 uppercase tracking-wider"
+            >
+              <span class="material-symbols-outlined text-tertiary">cloud</span>
+              Infrastructure
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >AWS</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >Docker</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >Kubernetes</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >CI/CD</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >Terraform</span
+              >
+            </div>
+          </div>
+          <!-- Product -->
+          <div class="glass-panel p-6 rounded-xl border-white/10">
+            <h3
+              class="font-label-md text-label-md text-on-surface flex items-center gap-2 mb-6 uppercase tracking-wider"
+            >
+              <span class="material-symbols-outlined">rocket_launch</span>
+              Product
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >MVP Design</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >Agile</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >Scrum</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >Metrics</span
+              >
+              <span
+                class="px-3 py-1 bg-surface-container-highest rounded-lg border border-white/10 font-code-sm text-xs text-on-surface"
+                >UX Focus</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer Shell -->
+    <footer
+      class="bg-surface-dim border-t border-white/5 w-full py-12 px-margin-mobile md:px-margin-desktop"
+    >
+      <div
+        class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-gutter"
+      >
+        <div class="flex items-center gap-3">
+          <span
+            class="material-symbols-outlined text-primary"
+            style="font-variation-settings: &quot;FILL&quot; 1"
+            >terminal</span
+          >
+          <span class="font-label-md text-label-md text-on-surface font-bold"
+            >CARLOS LEUTZ</span
+          >
+        </div>
+        <p
+          class="font-body-md text-body-md text-on-surface-variant text-center md:text-left"
+        >
+          © 2024 Full-Stack Software Engineer. Built with Precision.
+        </p>
+        <div class="flex gap-8 text-on-surface-variant font-body-md">
+          <a
+            class="hover:text-secondary underline decoration-secondary/30 transition-all duration-200"
+            href="https://www.linkedin.com/in/carlos-alexandre-leutz-1b1516185/?locale=en-US"
+            target="_blank" rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            class="hover:text-secondary underline decoration-secondary/30 transition-all duration-200"
+            href="https://github.com/Carlos-Alexandre-Leutz"
+            target="_blank" rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Subtle Mouse Glow Effect
+      document.addEventListener("mousemove", (e) => {
+        const glow = document.querySelector(".node-glow");
+        if (glow) {
+          const x = e.clientX;
+          const y = e.clientY;
+          glow.style.left = `${x - 150}px`;
+          glow.style.top = `${y - 150}px`;
+        }
+      });
+
+      // Intersection Observer for fade-in effects
+      const observerOptions = {
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("opacity-100", "translate-y-0");
+            entry.target.classList.remove("opacity-0", "translate-y-8");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll("section").forEach((section) => {
+        section.classList.add(
+          "transition-all",
+          "duration-1000",
+          "opacity-0",
+          "translate-y-8",
+        );
+        observer.observe(section);
+      });
+    </script>
+  </body>
+</html>
